@@ -20,7 +20,7 @@ directive('multiSelect', [function () {
             init(element, scope.msOptions);
 
             scope.$watch(function () {
-                return (ngModel && ngModel.$modelValue) || scope.multiSelect;
+                return (ngModel && ngModel.$modelValue && ngModel.$modelValue.length !== 0) || scope.multiSelect;
             }, function (n) {
                 refresh(element);
             });
